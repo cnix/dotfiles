@@ -58,13 +58,14 @@ function unmerged() {
 }
 
 # use macvim
-EDITOR=/usr/local/bin/mvim
-BUNDLER_EDITOR=$EDITOR
+EDITOR=/usr/bin/vim
+BUNDLER_EDITOR=/usr/local/bin/mvim
 
-SATISFACTION_TOOLS=~/workspace/tools
+# rdoc
+RDOCOPT="--exclude=test/*"
 
 PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:/usr/local/ruby/bin:$PATH"
-export EDITOR BUNDLER_EDITOR SATISFACTION_TOOLS PATH 
+export EDITOR BUNDLER_EDITOR SATISFACTION_TOOLS PATH RDOCOPT
 
 if [ -f $SATISFACTION_TOOLS/tools.bash ]; then
   source $SATISFACTION_TOOLS/tools.bash
@@ -72,3 +73,5 @@ fi
 
 # RVM Config
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+
+source ~/dotfiles/secure
